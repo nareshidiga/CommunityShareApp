@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:communitymarketplace/models/needs.dart';
 
+import 'home.dart';
+import 'needs_details_screen.dart';
+
 
 class _PostDescription extends StatelessWidget {
   const _PostDescription({
@@ -25,6 +28,7 @@ class _PostDescription extends StatelessWidget {
         children: <Widget>[
           Text(
             title,
+            maxLines: 3,
             style: const TextStyle(
               fontWeight: FontWeight.w500,
               fontSize: 14.0,
@@ -37,14 +41,14 @@ class _PostDescription extends StatelessWidget {
           ),
           const Padding(padding: EdgeInsets.symmetric(vertical: 1.0)),
           Text(
-            date,
+            date + '     ' + '$viewCount views',
             style: const TextStyle(fontSize: 10.0),
           ),
-          const Padding(padding: EdgeInsets.symmetric(vertical: 1.0)),
+/*          const Padding(padding: EdgeInsets.symmetric(vertical: 1.0)),
           Text(
             '$viewCount views',
             style: const TextStyle(fontSize: 10.0),
-          ),
+          ),*/
         ],
       ),
     );
@@ -59,6 +63,7 @@ class NeedListItem extends StatelessWidget {
     this.user,
     this.date,
     this.viewCount,
+    this.tap,
   });
 
   final Widget thumbnail;
@@ -66,35 +71,35 @@ class NeedListItem extends StatelessWidget {
   final String user;
   final String date;
   final int viewCount;
+  final GestureTapCallback tap;
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12.0))),
-      elevation: 5,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 5.0),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Expanded(
-              flex: 2,
-              child: thumbnail,
-            ),
-            Expanded(
-              flex: 3,
-              child: _PostDescription(
-                title: title,
-                user: user,
-                date: date,
-                viewCount: viewCount,
+    return InkWell(
+      onTap: tap,
+    child: Card(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(6.0))),
+        elevation: 5,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 5.0),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Expanded(
+                flex: 1,
+                child: thumbnail,
               ),
-            ),
-            const Icon(
-              Icons.more_vert,
-              size: 16.0,
-            ),
-          ],
+              Expanded(
+                flex: 2,
+                child: _PostDescription(
+                  title: title,
+                  user: user,
+                  date: date,
+                  viewCount: viewCount,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -109,6 +114,7 @@ class Needs extends StatefulWidget {
 
 
 class _NeedsState extends State<Needs> {
+
   Widget build(BuildContext context) {
     return GridView.builder(
         itemCount: needs.length,
@@ -116,13 +122,15 @@ class _NeedsState extends State<Needs> {
         itemBuilder: (BuildContext context, int index){
           Need need = needs[index];
           return NeedListItem(
+            tap : () {  Navigator.push(context, MaterialPageRoute(builder: (context) => NeedDetailsScreen(index: index)));},
               user: need.user,
               title: need.title,
               date: need.date,
               viewCount: need.viewCount,
               thumbnail: Container(
+                margin: EdgeInsets.only(left:5, right:5),
                 height: 100,
-                child: Image(image: AssetImage(need.imageUrl))
+                child: Image(image: AssetImage(need.imageUrl), fit: BoxFit.cover)
           ));
         }
     );
