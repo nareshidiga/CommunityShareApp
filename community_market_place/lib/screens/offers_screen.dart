@@ -1,6 +1,7 @@
 
-import 'package:communitymarketplace/models/needs.dart';
 import 'package:communitymarketplace/models/offers.dart';
+import 'package:communitymarketplace/screens/needs_details_screen.dart';
+import 'package:communitymarketplace/screens/offers_details_screen.dart';
 import 'package:flutter/material.dart';
 
 class Offers extends StatefulWidget {
@@ -19,7 +20,13 @@ class _OffersState extends State<Offers> {
        itemBuilder: (BuildContext context, int index) {
          Offer offer = offers[index];
          return OfferListItem(
-           tap: () {},
+           tap: () {
+             Navigator.push(
+               context, MaterialPageRoute(
+               builder: (context) => OfferDetailsScreen(index: index)
+             )
+             );
+           },
            thumbnail: Container(
              margin: EdgeInsets.only(left: 5, right: 5),
              height: 100,
