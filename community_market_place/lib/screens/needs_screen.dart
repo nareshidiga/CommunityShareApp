@@ -1,9 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:communitymarketplace/models/needs.dart';
+import 'package:flutter/material.dart';
 
-import 'home.dart';
 import 'needs_details_screen.dart';
-
 
 class _PostDescription extends StatelessWidget {
   const _PostDescription({
@@ -55,7 +53,6 @@ class _PostDescription extends StatelessWidget {
   }
 }
 
-
 class NeedListItem extends StatelessWidget {
   const NeedListItem({
     this.thumbnail,
@@ -77,8 +74,9 @@ class NeedListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: tap,
-    child: Card(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(6.0))),
+      child: Card(
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(6.0))),
         elevation: 5,
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 5.0),
@@ -106,33 +104,36 @@ class NeedListItem extends StatelessWidget {
   }
 }
 
-
 class Needs extends StatefulWidget {
   @override
   _NeedsState createState() => _NeedsState();
 }
 
-
 class _NeedsState extends State<Needs> {
-
   Widget build(BuildContext context) {
     return GridView.builder(
+        shrinkWrap: true,
         itemCount: needs.length,
-        gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1, childAspectRatio: 4),
-        itemBuilder: (BuildContext context, int index){
+        gridDelegate: new SliverGridDelegateWithMaxCrossAxisExtent(
+            maxCrossAxisExtent: 300, childAspectRatio: 4 / 2),
+        itemBuilder: (BuildContext context, int index) {
           Need need = needs[index];
           return NeedListItem(
-            tap : () {  Navigator.push(context, MaterialPageRoute(builder: (context) => NeedDetailsScreen(index: index)));},
+              tap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => NeedDetailsScreen(index: index)));
+              },
               user: need.user,
               title: need.title,
               date: need.date,
               viewCount: need.viewCount,
               thumbnail: Container(
-                margin: EdgeInsets.only(left:5, right:5),
-                height: 100,
-                child: Image(image: AssetImage(need.imageUrl), fit: BoxFit.cover)
-          ));
-        }
-    );
+                  margin: EdgeInsets.only(left: 5, right: 5),
+                  height: 100,
+                  child: Image(
+                      image: AssetImage(need.imageUrl), fit: BoxFit.cover)));
+        });
   }
 }
