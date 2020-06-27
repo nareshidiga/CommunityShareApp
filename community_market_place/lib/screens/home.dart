@@ -1,29 +1,24 @@
-import 'package:flutter/cupertino.dart';
+import 'package:communitymarketplace/screens/my_posts_screen.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
+import 'needs_screen.dart';
+import 'offers_screen.dart';
+
+class HomeScreen extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return HomeScreenState();
+  }
+}
+
+class HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 1: Business',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: School',
-      style: optionStyle,
-    ),
-  ];
+  static List<Widget> _widgetOptions = <Widget>[Needs(), Offers(), MyPosts()];
 
   void _onItemTapped(int index) {
-//    setState(() {
-//      _selectedIndex = index;
-//    });
+    setState(() {
+      _selectedIndex = index;
+    });
   }
 
   @override
@@ -33,12 +28,7 @@ class Home extends StatelessWidget {
         title: Text("My Community"),
       ),
       body: Center(
-        child: RaisedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Text('Go back!'),
-        ),
+        child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
@@ -55,9 +45,16 @@ class Home extends StatelessWidget {
             title: Text('My Posts'),
           ),
         ],
-        currentIndex: 1,
-        selectedItemColor: Colors.amber[800],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Theme.of(context).accentColor,
         onTap: _onItemTapped,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Add your onPressed code here!
+        },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.green,
       ),
     );
   }

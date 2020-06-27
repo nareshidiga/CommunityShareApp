@@ -276,8 +276,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 padding: const EdgeInsets.all(Sizes.PADDING_0),
                 elevation: Sizes.ELEVATION_8,
                 onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => Home()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomeScreen()));
                 },
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(Sizes.RADIUS_30),
