@@ -1,6 +1,6 @@
-# testlogin
+# CommunityMarketPlace
 
-A new Flutter application.
+A Flutter application for people within a community to share their needs or offers.
 
 ## Getting Started
 
