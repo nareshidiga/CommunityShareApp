@@ -43,16 +43,16 @@ class Home extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Home'),
+            icon: Icon(Icons.local_offer),
+            title: Text('Needs'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            title: Text('Business'),
+            icon: Icon(Icons.local_offer),
+            title: Text('Offers'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.school),
-            title: Text('School'),
+            title: Text('My Posts'),
           ),
         ],
         currentIndex: 1,
