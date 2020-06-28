@@ -220,6 +220,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
                   children: <Widget>[
                     CustomTextFormField(
+                      initialValue: 'Sam1283',
                       hasPrefixIcon: true,
                       prefixIcon: Icon(
                         FeatherIcons.user,
@@ -242,6 +243,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: Sizes.HEIGHT_20,
                     ),
                     CustomTextFormField(
+                      initialValue: '************',
                       hasPrefixIcon: true,
                       prefixIcon: Icon(
                         FeatherIcons.lock,
