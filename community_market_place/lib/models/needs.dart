@@ -21,7 +21,7 @@ class Need {
 
 List<Need> needs = [
   Need(
-      imageUrl: "images/bed.jpg",
+      imageUrl: "images/room.jpg",
       userIcon: "images/pic1.jpg",
       title:
           "Need room for quarantine for my cousin who is suffering from covid-19",
@@ -89,7 +89,7 @@ List<Need> needs = [
           "to the central town, could you"
           "offer me a ride for next three days?"),
   Need(
-      imageUrl: "images/pic1.jpg",
+      imageUrl: "images/tennis.jpg",
       userIcon: "images/pic2.jpg",
       title: "Looking for someone to play tennis with.",
       user: "Raj",
@@ -100,7 +100,7 @@ List<Need> needs = [
           "to this residential community. I am for a tennis buddy to play on "
           "the weekends morning"),
   Need(
-      imageUrl: "images/pic3.jpg",
+      imageUrl: "images/veggies.jpg",
       userIcon: "images/pic3.jpg",
       title: "Running out of veggies, please let me know if you "
           "got extra capacity.",
@@ -119,7 +119,7 @@ List<Need> needs = [
       viewCount: 67,
       accepted: false,
       description:
-      "I am going out of town on this Wednesday. I will be back by "
+          "I am going out of town on this Wednesday. I will be back by "
           "8pm. I have no one at home to take care of my pet dog. Could you"
           "take care of my dog for the day. Thanks."),
   Need(
@@ -135,7 +135,7 @@ List<Need> needs = [
           "to the central town, could you"
           "offer me a ride for next three days?"),
   Need(
-      imageUrl: "images/pic1.jpg",
+      imageUrl: "images/tennis.jpg",
       userIcon: "images/pic2.jpg",
       title: "Looking for someone to play tennis with.",
       user: "Raj",
@@ -146,7 +146,7 @@ List<Need> needs = [
           "to this residential community. I am for a tennis buddy to play on "
           "the weekends morning"),
   Need(
-      imageUrl: "images/pic3.jpg",
+      imageUrl: "images/veggies.jpg",
       userIcon: "images/pic3.jpg",
       title: "Running out of veggies, please let me know if you "
           "got extra capacity.",

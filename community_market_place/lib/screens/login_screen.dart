@@ -71,7 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 clipper: CustomLoginShapeClipper4(),
                 child: Container(
                   height: heightOfScreen,
-                  decoration: BoxDecoration(color: AppColors.orangeShade2),
+                  decoration: BoxDecoration(color: Colors.deepPurple.shade100),
                 ),
               ),
             ),
@@ -98,7 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Container(
                   height: heightOfScreen,
                   decoration: BoxDecoration(
-                    color: AppColors.lighterBlue,
+                    color: Colors.deepPurple.shade100,
                   ),
                 ),
               ),
@@ -112,7 +112,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Container(
                   height: heightOfScreen,
                   decoration: BoxDecoration(
-                    gradient: Gradients.curvesGradient2,
+                    gradient: Gradients.curvesGradient1,
                   ),
                 ),
               ),
@@ -174,8 +174,9 @@ class _LoginScreenState extends State<LoginScreen> {
                               child: Text(
                                 StringConst.REGISTER,
                                 style: textTheme.button.copyWith(
-                                  color: AppColors.orangeShade1,
-                                ),
+                                    color: Theme.of(context).accentColor
+                                    //AppColors.orangeShade1,
+                                    ),
                               ),
                             ),
                           ),
@@ -278,7 +279,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 padding: const EdgeInsets.all(Sizes.PADDING_0),
                 elevation: Sizes.ELEVATION_8,
                 onPressed: () {
-                  Navigator.push(context,
+                  Navigator.pushReplacement(context,
                       MaterialPageRoute(builder: (context) => HomeScreen()));
                 },
                 shape: RoundedRectangleBorder(
@@ -288,9 +289,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: Sizes.HEIGHT_60,
                   width: Sizes.WIDTH_60,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(Sizes.RADIUS_30),
-                    gradient: Gradients.buttonGradient,
-                  ),
+                      borderRadius: BorderRadius.circular(Sizes.RADIUS_30),
+                      //gradient: Gradients.buttonGradient,
+                      color: Theme.of(context).accentColor),
                   child: Icon(
                     FeatherIcons.arrowRight,
                     size: Sizes.ICON_SIZE_30,

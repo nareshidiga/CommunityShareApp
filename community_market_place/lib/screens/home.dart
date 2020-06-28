@@ -1,11 +1,13 @@
 import 'package:communitymarketplace/screens/edit_profile.dart';
+import 'package:communitymarketplace/screens/login_screen.dart';
 import 'package:communitymarketplace/screens/my_posts_screen.dart';
+import 'package:communitymarketplace/screens/post_new_offer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
-import 'create_new_post.dart';
 import 'needs_screen.dart';
 import 'offers_screen.dart';
+import 'post_new_need.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -34,7 +36,7 @@ class HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        title: Text("My Community"),
+        title: Text("MyHome Community"),
         actions: [
           PopupMenuButton<String>(
             onSelected: (String choice) {
@@ -55,20 +57,20 @@ class HomeScreenState extends State<HomeScreen> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.local_offer),
+            icon: Icon(Icons.pan_tool),
             title: Text('Needs'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.local_offer),
+            icon: Icon(Icons.card_giftcard),
             title: Text('Offers'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
+            icon: Icon(Icons.assignment),
             title: Text('My Posts'),
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Theme.of(context).accentColor,
+        //selectedItemColor: Theme.of(context).accentColor,
         onTap: _onItemTapped,
       ),
       floatingActionButton: _buildFloatingActionButton(),
@@ -88,23 +90,32 @@ class HomeScreenState extends State<HomeScreen> {
       children: [
         SpeedDialChild(
             child: Icon(Icons.pan_tool),
-            backgroundColor: Colors.lightGreen,
+            backgroundColor: Colors.green,
             label: 'Post Need',
             labelStyle: TextStyle(fontSize: 18.0, color: Colors.grey[700]),
-            onTap: () => _navigateToCreatePost()),
+            onTap: () => _navigatePostNewNeed()),
         SpeedDialChild(
             child: Icon(Icons.card_giftcard),
-            backgroundColor: Colors.lightGreen,
+            backgroundColor: Colors.green,
             label: 'Post Offer',
             labelStyle: TextStyle(fontSize: 18.0, color: Colors.grey[700]),
-            onTap: () => _navigateEditProfile()),
+            onTap: () => _navigateToPostNewOffer()),
       ],
     );
   }
 
-  _navigateToCreatePost() async {
-    final result = await Navigator.push(context,
-        MaterialPageRoute(builder: (context) => CreateNewPostScreen()));
+  _navigatePostNewNeed() async {
+    final result = await Navigator.push(
+        context, MaterialPageRoute(builder: (context) => PostNewNeedScreen()));
+    if (result != null) {
+      _scaffoldKey.currentState
+          .showSnackBar(SnackBar(content: Text("$result")));
+    }
+  }
+
+  _navigateToPostNewOffer() async {
+    final result = await Navigator.push(
+        context, MaterialPageRoute(builder: (context) => PostNewOfferScreen()));
     if (result != null) {
       _scaffoldKey.currentState
           .showSnackBar(SnackBar(content: Text("$result")));
@@ -129,7 +140,8 @@ class HomeScreenState extends State<HomeScreen> {
         // TODO
         break;
       case LOGOUT:
-        Navigator.pop(context);
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => LoginScreen()));
         break;
     }
   }

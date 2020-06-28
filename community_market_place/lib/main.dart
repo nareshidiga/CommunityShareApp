@@ -14,8 +14,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Community Share',
       theme: ThemeData(
-        primarySwatch: Colors.orange,
-        accentColor: Colors.blue,
+        primarySwatch: Colors.deepPurple,
+        accentColor: Colors.pink,
+        buttonColor: Colors.deepPurple,
         visualDensity: VisualDensity.adaptivePlatformDensity,
 
         //fontFamily: 'Georgia',

@@ -1,26 +1,26 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CreateNewPostScreen extends StatelessWidget {
+class PostNewOfferScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Create new post'),
+        title: Text('Post your offer'),
       ),
-      body: CreateNewPostForm(),
+      body: PostNewOfferForm(),
     );
   }
 }
 
-class CreateNewPostForm extends StatefulWidget {
+class PostNewOfferForm extends StatefulWidget {
   @override
-  CreateNewPostScreenState createState() {
-    return CreateNewPostScreenState();
+  PostNewOfferFormState createState() {
+    return PostNewOfferFormState();
   }
 }
 
-class CreateNewPostScreenState extends State<CreateNewPostForm> {
+class PostNewOfferFormState extends State<PostNewOfferForm> {
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -38,12 +38,12 @@ class CreateNewPostScreenState extends State<CreateNewPostForm> {
             TextFormField(
               decoration: const InputDecoration(
                 //icon: const Icon(Icons.person),
-                hintText: 'Enter your need',
-                labelText: 'Your need',
+                hintText: 'Enter your offer',
+                labelText: 'Your offer',
               ),
               validator: (value) {
                 if (value.isEmpty) {
-                  return 'Please enter your need';
+                  return 'Please enter your offer';
                 }
                 return null;
               },
@@ -53,12 +53,12 @@ class CreateNewPostScreenState extends State<CreateNewPostForm> {
               maxLines: 100,
               decoration: const InputDecoration(
                 //icon: const Icon(Icons.phone),
-                hintText: 'Enter need details',
+                hintText: 'Enter offer details',
                 labelText: 'Details',
               ),
               validator: (value) {
                 if (value.isEmpty) {
-                  return 'Please enter need details';
+                  return 'Please enter offer details';
                 }
                 return null;
               },
@@ -89,11 +89,11 @@ class CreateNewPostScreenState extends State<CreateNewPostForm> {
                 child: Padding(
                   padding: const EdgeInsets.all(18.0),
                   child: RaisedButton(
+                    textColor: Colors.grey[100],
                     child: const Text('Submit'),
                     onPressed: () {
                       if (_formKey.currentState.validate()) {
-                        Navigator.pop(
-                            context, 'New post submitted successfully');
+                        Navigator.pop(context, 'New offer posted successfully');
                       }
                     },
                   ),
