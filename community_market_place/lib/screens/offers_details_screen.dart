@@ -19,11 +19,14 @@ class OfferDetailsScreen extends StatefulWidget {
 
 class OfferDetailsScreenState extends State<OfferDetailsScreen> {
   int index = 0;
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+  bool _offeredSupport = false;
   OfferDetailsScreenState(this.index);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         title: Text("My Community"),
       ),
@@ -49,7 +52,7 @@ class OfferDetailsScreenState extends State<OfferDetailsScreen> {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
-                      ContainerWithCircle(offers[index].userIcon, Sizes.RADIUS_100, Sizes.RADIUS_0),
+                      ContainerWithCircle(offers[index].userIcon, 50, Sizes.RADIUS_0),
                       SizedBox(width: Sizes.WIDTH_10,),
                       Text( offers[index].user, maxLines: Constants.DESC_MAX_LINES)
                     ]
@@ -62,38 +65,67 @@ class OfferDetailsScreenState extends State<OfferDetailsScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      ClipOval(
-                        child: Material(
-                          color: AppColors.seaBlue1,
-                          child: InkWell(
-                            splashColor: AppColors.orangeShade5,
-                            child: SizedBox(width: Sizes.WIDTH_50, height: Sizes.HEIGHT_50, child: Icon(Icons.message, color: AppColors.white,)),
-                            onTap: () {},
+                      Column(
+                        children: [
+                          ClipOval(
+                            child: Material(
+                              color: AppColors.seaBlue1,
+                              child: InkWell(
+                                splashColor: AppColors.orangeShade5,
+                                child: SizedBox(width: Sizes.WIDTH_50, height: Sizes.HEIGHT_50, child: Icon(Icons.message, color: AppColors.white,)),
+                                onTap: () {},
+                              ),
+                            ),
                           ),
-                        ),
+                          SizedBox(height: 5,),
+                          Text( 'Message', maxLines: Constants.DESC_MAX_LINES, style: Theme.of(context).textTheme.bodyText1),
+                        ],
                       ),
-                      ClipOval(
-                        child: Material(
-                          color: AppColors.seaBlue1,
-                          child: InkWell(
-                            splashColor: AppColors.orangeShade5,
-                            child: SizedBox(width: Sizes.WIDTH_50, height: Sizes.HEIGHT_50, child: Icon(Icons.call, color: AppColors.white)),
-                            onTap: () {},
+                      Column(
+                        children: [
+                          ClipOval(
+                            child: Material(
+                              color: AppColors.seaBlue1,
+                              child: InkWell(
+                                splashColor: AppColors.orangeShade5,
+                                child: SizedBox(width: Sizes.WIDTH_50, height: Sizes.HEIGHT_50, child: Icon(Icons.call, color: AppColors.white)),
+                                onTap: () {},
+                              ),
+                            ),
                           ),
-                        ),
+                          SizedBox(height: 5,),
+                          Text( 'Call', maxLines: Constants.DESC_MAX_LINES, style: Theme.of(context).textTheme.bodyText1),
+                        ],
                       ),
-                      ClipOval(
-                        child: Material(
-                          color: AppColors.seaBlue1,
-                          child: InkWell(
-                            splashColor: AppColors.orangeShade5,
-                            child: SizedBox(width: Sizes.WIDTH_50, height: Sizes.HEIGHT_50, child: Icon(Icons.local_offer, color: AppColors.white, semanticLabel:'Accept offer' /*Accessibility feature needs to highlight this*/)),
-                            onTap: () {/*accept offer code */},
+                      Column(
+                        children: [
+                          ClipOval(
+                            child: Material(
+                              color: offers[index].accepted ? AppColors.green : AppColors.seaBlue1,
+                              child: InkWell(
+                                splashColor: AppColors.orangeShade5,
+                                child: SizedBox(width: Sizes.WIDTH_50, height: Sizes.HEIGHT_50, child: Icon(Icons.local_offer, color: offers[index].accepted? AppColors.greyShade3  : AppColors.white, semanticLabel:'Accept offer' /*Accessibility feature needs to highlight this*/)),
+                                onTap: () {
+                                  final snackBar = SnackBar(content: Text('Accept Offer Successful!'));
+                                  // Find the Scaffold in the widget tree and use it to show a SnackBar.
+                                  _scaffoldKey.currentState.showSnackBar(snackBar);
+                                  setState(()
+                                  {
+
+                                    offers[index].accepted = true;
+                                    _offeredSupport = offers[index].accepted;
+                                  });
+                                },
+                              ),
+                            ),
                           ),
-                        ),
+                          SizedBox(height: 5,),
+                          Text(offers[index].accepted ?  'Offer accepted' : 'Accept Offer' , maxLines: Constants.DESC_MAX_LINES, style: Theme.of(context).textTheme.bodyText1),
+                        ],
                       )
                     ],
-                  )
+                  ),
+                  SizedBox(height:20),
                 ],
               ),
             ),

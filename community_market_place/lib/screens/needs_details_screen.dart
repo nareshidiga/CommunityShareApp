@@ -3,6 +3,8 @@ import 'package:communitymarketplace/widgets/circle_container.dart';
 import 'package:flutter/material.dart';
 
 import '../values/values.dart';
+import '../utils/constants.dart' as Constants;
+import '../values/values.dart';
 import 'needs_screen.dart';
 
 class NeedDetailsScreen extends StatefulWidget {
@@ -19,20 +21,14 @@ class NeedDetailsScreen extends StatefulWidget {
 
 class NeedDetailsScreenState extends State<NeedDetailsScreen> {
   int index = 0;
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+  bool _offeredSupport = false;
   NeedDetailsScreenState(this.index);
-/*
-  static List<Widget> _widgetOptions = <Widget>[Needs(), Offers(), MyPosts()];
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-*/
-
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         title: Text("My Community"),
       ),
@@ -58,7 +54,7 @@ class NeedDetailsScreenState extends State<NeedDetailsScreen> {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
-                      ContainerWithCircle(needs[index].userIcon, 100.0, 1.0),
+                      ContainerWithCircle(needs[index].userIcon, 50.0, 1.0),
                       SizedBox(width: 10,),
                       Text( needs[index].user, maxLines: 3,),
                     ],
@@ -67,85 +63,70 @@ class NeedDetailsScreenState extends State<NeedDetailsScreen> {
                   Text( 'Description', maxLines: 3, style: Theme.of(context).textTheme.headline6 ),
                   const Padding(padding: EdgeInsets.symmetric(vertical: 2.0)),
                   Text( needs[index].description, maxLines: 3, style: Theme.of(context).textTheme.bodyText2),
-                  SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      RaisedButton(
-                        onPressed: () { },
-                      color: AppColors.seaBlue1,
-                        elevation: Sizes.ELEVATION_6,
-                        shape: CircleBorder(),
-                         child: Icon(Icons.message)
-                      ),
-                      RaisedButton(
-                          onPressed: () { },
-                          color: AppColors.greenShade1,
-                          elevation: Sizes.ELEVATION_6,
-                          shape: CircleBorder(),
-                          child: Icon(Icons.call)
-                      ),
-                    ],
-                  ),
                   SizedBox(height: 20), //TODO Needs to decide which icons looks better
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                       Container(
-                        height: Sizes.HEIGHT_50,
-                        width: Sizes.WIDTH_50,
-                        child: RaisedButton(
-                          padding: const EdgeInsets.all(Sizes.PADDING_0),
-                          elevation: Sizes.ELEVATION_8,
-                          onPressed: () {
-
-                          },
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(Sizes.RADIUS_30),
-                          ),
-                          child: Ink(
-                            height: Sizes.HEIGHT_50,
-                            width: Sizes.WIDTH_50,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(Sizes.RADIUS_30),
-                              gradient: Gradients.buttonGradient,
-                            ),
-                            child: Icon(
-                              Icons.message,
-                              size: Sizes.ICON_SIZE_30,
-                              color: AppColors.white,
+                      Column(
+                        children: [
+                          ClipOval(
+                            child: Material(
+                              color: AppColors.seaBlue1,
+                              child: InkWell(
+                                splashColor: AppColors.orangeShade5,
+                                child: SizedBox(width: Sizes.WIDTH_50, height: Sizes.HEIGHT_50, child: Icon(Icons.message, color: AppColors.white,)),
+                                onTap: () {},
+                              ),
                             ),
                           ),
-                        ),
+                          SizedBox(height: 5,),
+                          Text( 'Message', maxLines: Constants.DESC_MAX_LINES, style: Theme.of(context).textTheme.bodyText1),
+                        ],
                       ),
-                       Container(
-                        height: Sizes.HEIGHT_50,
-                        width: Sizes.WIDTH_50,
-                        child: RaisedButton(
-                          padding: const EdgeInsets.all(Sizes.PADDING_0),
-                          elevation: Sizes.ELEVATION_8,
-                          onPressed: () {
-                          },
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(Sizes.RADIUS_30),
-                          ),
-                          child: Ink(
-                            height: Sizes.HEIGHT_50,
-                            width: Sizes.WIDTH_50,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(Sizes.RADIUS_30),
-                              gradient: Gradients.buttonGradient,
-                            ),
-                            child: Icon(
-                              Icons.call,
-                              size: Sizes.ICON_SIZE_30,
-                              color: AppColors.white,
+                      Column(
+                        children: [
+                          ClipOval(
+                            child: Material(
+                              color: AppColors.seaBlue1,
+                              child: InkWell(
+                                splashColor: AppColors.orangeShade5,
+                                child: SizedBox(width: Sizes.WIDTH_50, height: Sizes.HEIGHT_50, child: Icon(Icons.call, color: AppColors.white)),
+                                onTap: () {},
+                              ),
                             ),
                           ),
-                        ),
+                          SizedBox(height: 5,),
+                          Text( 'Call', maxLines: Constants.DESC_MAX_LINES, style: Theme.of(context).textTheme.bodyText1),
+                        ],
                       ),
+                      Column(
+                        children: [
+                          ClipOval(
+                            child: Material(
+                              color: needs[index].accepted? AppColors.green : AppColors.seaBlue1,
+                              child: InkWell(
+                                splashColor: AppColors.orangeShade5,
+                                child: SizedBox(width: Sizes.WIDTH_50, height: Sizes.HEIGHT_50, child: Icon(Icons.local_offer, color: needs[index].accepted ? AppColors.greyShade3  : AppColors.white, semanticLabel:'Accept offer' /*Accessibility feature needs to highlight this*/)),
+                                onTap: () {
+                                  final snackBar = SnackBar(content: Text('Offer Support Successful!'));
+                                  // Find the Scaffold in the widget tree and use it to show a SnackBar.
+                                  _scaffoldKey.currentState.showSnackBar(snackBar);
+                                  setState(()
+                                  {
+                                    needs[index].accepted = true;
+                                    _offeredSupport = needs[index].accepted;
+                                  });
+                                 },
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 5,),
+                          Text( needs[index].accepted ?  'Support Offered' : 'Offer Support', maxLines: Constants.DESC_MAX_LINES, style: Theme.of(context).textTheme.bodyText1),
+                        ],
+                      )
                     ],
-                  )    //TODO Row end this is sample block to decied which patter icon should follow
+                  ),
+                  SizedBox(height: 20,),//TODO Row end this is sample block to decied which patter icon should follow
                 ],
               ),
             ),

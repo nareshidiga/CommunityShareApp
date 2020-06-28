@@ -5,6 +5,7 @@ class Need {
   String user;
   String date;
   String description;
+  bool accepted;
   int viewCount;
 
   Need(
@@ -14,6 +15,7 @@ class Need {
       this.user,
       this.date,
       this.viewCount,
+        this.accepted,
       this.description});
 }
 
@@ -26,6 +28,35 @@ List<Need> needs = [
       user: "Naresh",
       date: "23/06/2020",
       viewCount: 10,
+      accepted: false,
+      description: "Need room for quarantine for my cousin who is suffering from covid-19 Need room for quarantine for my cousin who is suffering from covid-19"),
+  Need(
+      imageUrl: "images/pic3.jpg",
+      userIcon: "images/pic3.jpg",
+      title: "Need room for quarantine",
+      user: "Naresh",
+      date: "23/06/2020",
+      viewCount: 10,
+      accepted: false,
+      description: "I need extra room"),
+  Need(
+      imageUrl: "images/pic4.jpg",
+      userIcon: "images/pic2.jpg",
+      title: "Need room for quarantine",
+      user: "Naresh",
+      date: "23/06/2020",
+      viewCount: 10,
+      accepted: false,
+      description: "I need extra room"),
+  Need(
+      imageUrl: "images/pic1.jpg",
+      userIcon: "images/pic1.jpg",
+      title:
+          "Need room for quarantine for my cousin who is suffering from covid-19 Need room for quarantine for my cousin who is suffering from covid-19",
+      user: "Naresh",
+      date: "23/06/2020",
+      viewCount: 10,
+      accepted: false,
       description: "I need extra room"),
   Need(
       imageUrl: "images/pic3.jpg",
@@ -34,6 +65,7 @@ List<Need> needs = [
       user: "Naresh",
       date: "23/06/2020",
       viewCount: 10,
+      accepted: false,
       description: "I need extra room"),
   Need(
       imageUrl: "images/pic4.jpg",
@@ -51,6 +83,7 @@ List<Need> needs = [
       user: "Naresh",
       date: "23/06/2020",
       viewCount: 10,
+      accepted: false,
       description: "I need extra room"),
   Need(
       imageUrl: "images/pic3.jpg",
@@ -59,6 +92,7 @@ List<Need> needs = [
       user: "Naresh",
       date: "23/06/2020",
       viewCount: 10,
+      accepted: false,
       description: "I need extra room"),
   Need(
       imageUrl: "images/pic4.jpg",
@@ -67,6 +101,7 @@ List<Need> needs = [
       user: "Naresh",
       date: "23/06/2020",
       viewCount: 10,
+      accepted: false,
       description: "I need extra room"),
   Need(
       imageUrl: "images/pic1.jpg",
@@ -76,6 +111,7 @@ List<Need> needs = [
       user: "Naresh",
       date: "23/06/2020",
       viewCount: 10,
+      accepted: false,
       description: "I need extra room"),
   Need(
       imageUrl: "images/pic3.jpg",
@@ -84,6 +120,7 @@ List<Need> needs = [
       user: "Naresh",
       date: "23/06/2020",
       viewCount: 10,
+      accepted: false,
       description: "I need extra room"),
   Need(
       imageUrl: "images/pic4.jpg",
@@ -92,15 +129,17 @@ List<Need> needs = [
       user: "Naresh",
       date: "23/06/2020",
       viewCount: 10,
+      accepted: false,
       description: "I need extra room"),
   Need(
       imageUrl: "images/pic1.jpg",
       userIcon: "images/pic1.jpg",
       title:
-          "Need room for quarantine for my cousin who is suffering from covid-19 Need room for quarantine for my cousin who is suffering from covid-19",
+      "Need room for quarantine for my cousin who is suffering from covid-19 Need room for quarantine for my cousin who is suffering from covid-19",
       user: "Naresh",
       date: "23/06/2020",
       viewCount: 10,
+      accepted: false,
       description: "I need extra room"),
   Need(
       imageUrl: "images/pic3.jpg",
@@ -109,6 +148,7 @@ List<Need> needs = [
       user: "Naresh",
       date: "23/06/2020",
       viewCount: 10,
+      accepted: false,
       description: "I need extra room"),
   Need(
       imageUrl: "images/pic4.jpg",
@@ -117,5 +157,6 @@ List<Need> needs = [
       user: "Naresh",
       date: "23/06/2020",
       viewCount: 10,
+      accepted: false,
       description: "I need extra room"),
 ];
