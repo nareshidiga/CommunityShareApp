@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Community Market',
+      title: 'Community Share',
       theme: ThemeData(
         primarySwatch: Colors.orange,
         accentColor: Colors.blue,
