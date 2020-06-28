@@ -9,6 +9,7 @@ class Post {
   String description;
   bool accepted;
   int viewCount;
+  String response;
   bool isNeed;
 
   Post(
@@ -19,6 +20,7 @@ class Post {
         this.date,
         this.viewCount,
         this.accepted,
+        this.response,
         this.description,
          this.isNeed});
 }
@@ -34,7 +36,9 @@ List<Post> posts = [
       viewCount: 10,
       accepted: false,
       isNeed: false,
+      response: "has accepted your offer",
       description: "I need extra room"),
+
   Post(
       imageUrl: "images/pic3.jpg",
       userIcon: "images/pic3.jpg",
@@ -44,6 +48,7 @@ List<Post> posts = [
       viewCount: 10,
       accepted: false,
       isNeed: false,
+      response: "has accepted your offer",
       description: "I need extra room"),
   Post(
       imageUrl: "images/pic4.jpg",
@@ -54,6 +59,7 @@ List<Post> posts = [
       viewCount: 10,
       accepted: false,
       isNeed: false,
+      response: "has accepted your offer",
       description: "I need extra room"),
   Post(
       imageUrl: "images/pic1.jpg",
@@ -64,6 +70,7 @@ List<Post> posts = [
       date: "23/06/2020",
       viewCount: 10,
       accepted: false,
+      response: "has accepted your offer",
       isNeed: false,
       description: "I need extra room"),
   Post(
@@ -75,6 +82,7 @@ List<Post> posts = [
       viewCount: 10,
       accepted: false,
       isNeed: true,
+      response: "has supported your need",
       description: "I need extra room"),
   Post(
       imageUrl: "images/pic4.jpg",
@@ -85,6 +93,7 @@ List<Post> posts = [
       viewCount: 10,
       accepted: false,
       isNeed: false,
+      response: "has accepted your offer",
       description: "I need extra room"),
   Post(
       imageUrl: "images/pic4.jpg",
@@ -95,6 +104,7 @@ List<Post> posts = [
       viewCount: 10,
       accepted: true,
       isNeed: true,
+      response: "has supported your need",
       description: "I need extra room"),
 ];
 

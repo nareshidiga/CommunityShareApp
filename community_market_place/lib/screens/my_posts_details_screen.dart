@@ -57,8 +57,15 @@ class MyPostsDetailsScreenState extends State<MyPostsDetailsScreen> {
                         ),
                       ),
                       Expanded(
-                        flex: 2,
+                        flex: 3,
                           child: Text('Posted on ' + posts[index].date + '     ' + '${posts[index].viewCount} views', style: Theme.of(context).textTheme.bodyText2  )),
+                      Expanded(
+                        flex: 1,
+                        child: Text(
+                          posts[index].accepted ? 'CLOSED' : 'OPEN',
+                          style: const TextStyle(fontSize: 14.0, color: Colors.green, fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ],
                   ),
                   const Padding(padding: EdgeInsets.symmetric(vertical: 2.0)),
@@ -83,7 +90,8 @@ class MyPostsDetailsScreenState extends State<MyPostsDetailsScreen> {
                       children: <Widget>[
                         ContainerWithCircle(posts[index].userIcon, 40, Sizes.RADIUS_0),
                         SizedBox(width: Sizes.WIDTH_10,),
-                        Text( posts[index].user, maxLines: Constants.DESC_MAX_LINES),
+                        Text( posts[index].user + ' ', maxLines: 1),
+                        Text( posts[index].response, maxLines: 1),
                       ]
                   ),
                   SizedBox(height: Sizes.HEIGHT_20),
