@@ -15,148 +15,98 @@ class Need {
       this.user,
       this.date,
       this.viewCount,
-        this.accepted,
+      this.accepted,
       this.description});
 }
 
 List<Need> needs = [
   Need(
-      imageUrl: "images/pic1.jpg",
+      imageUrl: "images/bed.jpg",
       userIcon: "images/pic1.jpg",
       title:
-          "Need room for quarantine for my cousin who is suffering from covid-19 Need room for quarantine for my cousin who is suffering from covid-19",
+          "Need room for quarantine for my cousin who is suffering from covid-19",
       user: "Naresh",
       date: "23/06/2020",
-      viewCount: 10,
+      viewCount: 60,
       accepted: false,
-      description: "Need room for quarantine for my cousin who is suffering from covid-19 Need room for quarantine for my cousin who is suffering from covid-19"),
+      description:
+          "Need room for quarantine for my cousin who is suffering from covid-19 Need room for quarantine for my cousin who is suffering from covid-19"),
   Need(
-      imageUrl: "images/pic3.jpg",
+      imageUrl: "images/doctor.jpg",
       userIcon: "images/pic3.jpg",
-      title: "Need room for quarantine",
+      title: "Any cardiac doctor in the community, please come to our "
+          "home immediately.",
       user: "Naresh",
       date: "23/06/2020",
-      viewCount: 10,
+      viewCount: 102,
       accepted: false,
-      description: "I need extra room"),
+      description:
+          "Any cardiac doctor in the community, please come to our home "
+          "immediately. My grand mother is experiencing chest pain."),
   Need(
-      imageUrl: "images/pic4.jpg",
+      imageUrl: "images/blood.jpg",
       userIcon: "images/pic2.jpg",
-      title: "Need room for quarantine",
+      title: "Urgently looking for A- blood",
       user: "Naresh",
       date: "23/06/2020",
-      viewCount: 10,
+      viewCount: 50,
       accepted: false,
-      description: "I need extra room"),
+      description:
+          "My friend has met with an accident. Urgently looking for A- blood."),
   Need(
-      imageUrl: "images/pic1.jpg",
+      imageUrl: "images/sanitizer.jpg",
       userIcon: "images/pic1.jpg",
-      title:
-          "Need room for quarantine for my cousin who is suffering from covid-19 Need room for quarantine for my cousin who is suffering from covid-19",
+      title: "Need a Sanitizer bottle and face mask",
       user: "Naresh",
       date: "23/06/2020",
-      viewCount: 10,
+      viewCount: 46,
       accepted: false,
-      description: "I need extra room"),
+      description:
+          "Need a Sanitizer bottle and a face mask if you got a spare one. "
+          "Not able to buy it as they are out of stock in the shops."),
   Need(
-      imageUrl: "images/pic3.jpg",
+      imageUrl: "images/dog.jpg",
       userIcon: "images/pic3.jpg",
-      title: "Need room for quarantine",
+      title: "Can you take care of my dog on this Wednesday?",
       user: "Naresh",
       date: "23/06/2020",
-      viewCount: 10,
+      viewCount: 67,
       accepted: false,
-      description: "I need extra room"),
+      description:
+          "I am going out of town on this Wednesday. I will be back by "
+          "8pm. I have no one at home to take care of my pet dog. Could you"
+          "take care of my dog for the day. Thanks."),
   Need(
-      imageUrl: "images/pic4.jpg",
+      imageUrl: "images/car.jpg",
       userIcon: "images/pic2.jpg",
-      title: "Need room for quarantine",
+      title: "My car is broke. Can any one driving to the central town "
+          "offer me a ride for next three days?",
       user: "Naresh",
       date: "23/06/2020",
-      viewCount: 10,
-      description: "I need extra room"),
-  Need(
-      imageUrl: "images/pic1.jpg",
-      userIcon: "images/pic1.jpg",
-      title:
-          "Need room for quarantine for my cousin who is suffering from covid-19 Need room for quarantine for my cousin who is suffering from covid-19",
-      user: "Naresh",
-      date: "23/06/2020",
-      viewCount: 10,
-      accepted: false,
-      description: "I need extra room"),
-  Need(
-      imageUrl: "images/pic3.jpg",
-      userIcon: "images/pic3.jpg",
-      title: "Need room for quarantine",
-      user: "Naresh",
-      date: "23/06/2020",
-      viewCount: 10,
-      accepted: false,
-      description: "I need extra room"),
-  Need(
-      imageUrl: "images/pic4.jpg",
-      userIcon: "images/pic2.jpg",
-      title: "Need room for quarantine",
-      user: "Naresh",
-      date: "23/06/2020",
-      viewCount: 10,
-      accepted: false,
-      description: "I need extra room"),
+      viewCount: 34,
+      description: "My car is broke. I work in the central town. If you also go"
+          "to the central town, could you"
+          "offer me a ride for next three days?"),
   Need(
       imageUrl: "images/pic1.jpg",
       userIcon: "images/pic1.jpg",
-      title:
-          "Need room for quarantine for my cousin who is suffering from covid-19 Need room for quarantine for my cousin who is suffering from covid-19",
+      title: "Looking for someone to play tennis with.",
       user: "Naresh",
       date: "23/06/2020",
-      viewCount: 10,
+      viewCount: 78,
       accepted: false,
-      description: "I need extra room"),
+      description: "I am a beginner level tennis player. I have recently moved"
+          "to this residential community. I am for a tennis buddy to play on "
+          "the weekends morning"),
   Need(
       imageUrl: "images/pic3.jpg",
       userIcon: "images/pic3.jpg",
-      title: "Need room for quarantine",
+      title: "Running out of veggies, please let me know if you "
+          "got extra capacity.",
       user: "Naresh",
       date: "23/06/2020",
-      viewCount: 10,
+      viewCount: 26,
       accepted: false,
-      description: "I need extra room"),
-  Need(
-      imageUrl: "images/pic4.jpg",
-      userIcon: "images/pic2.jpg",
-      title: "Need room for quarantine",
-      user: "Naresh",
-      date: "23/06/2020",
-      viewCount: 10,
-      accepted: false,
-      description: "I need extra room"),
-  Need(
-      imageUrl: "images/pic1.jpg",
-      userIcon: "images/pic1.jpg",
-      title:
-      "Need room for quarantine for my cousin who is suffering from covid-19 Need room for quarantine for my cousin who is suffering from covid-19",
-      user: "Naresh",
-      date: "23/06/2020",
-      viewCount: 10,
-      accepted: false,
-      description: "I need extra room"),
-  Need(
-      imageUrl: "images/pic3.jpg",
-      userIcon: "images/pic3.jpg",
-      title: "Need room for quarantine",
-      user: "Naresh",
-      date: "23/06/2020",
-      viewCount: 10,
-      accepted: false,
-      description: "I need extra room"),
-  Need(
-      imageUrl: "images/pic4.jpg",
-      userIcon: "images/pic2.jpg",
-      title: "Need room for quarantine",
-      user: "Naresh",
-      date: "23/06/2020",
-      viewCount: 10,
-      accepted: false,
-      description: "I need extra room"),
+      description: "Running out of veggies, could please let me know if you got"
+          "extra capacity. Thank you"),
 ];
