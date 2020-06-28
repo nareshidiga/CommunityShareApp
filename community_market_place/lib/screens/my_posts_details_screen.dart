@@ -76,14 +76,7 @@ class MyPostsDetailsScreenState extends State<MyPostsDetailsScreen> {
                   SizedBox(height: 20),
                   Text( 'Responses', maxLines: Constants.DESC_MAX_LINES, style: Theme.of(context).textTheme.headline6 ),
                   const Padding(padding: EdgeInsets.symmetric(vertical: Sizes.PADDING_2)),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      ContainerWithCircle(posts[index].userIcon, 40, Sizes.RADIUS_0),
-                      SizedBox(width: Sizes.WIDTH_10,),
-                      Text( posts[index].user, maxLines: Constants.DESC_MAX_LINES),
-                    ]
-                  ),
+
                   SizedBox(height: Sizes.HEIGHT_10),
                   Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
