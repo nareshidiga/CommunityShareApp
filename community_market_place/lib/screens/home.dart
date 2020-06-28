@@ -15,9 +15,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class HomeScreenState extends State<HomeScreen> {
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
   int _selectedIndex = 0;
   static List<Widget> _widgetOptions = <Widget>[Needs(), Offers(), MyPosts()];
-  final _scaffoldKey = GlobalKey<ScaffoldState>();
+  static const String PROFILE = 'Profile';
+  static const String SETTINGS = 'Settings';
+  static const String LOGOUT = 'Logout';
+  static List<String> _optionsMenu = [PROFILE, SETTINGS, LOGOUT];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -33,9 +37,11 @@ class HomeScreenState extends State<HomeScreen> {
         title: Text("My Community"),
         actions: [
           PopupMenuButton<String>(
-            //onSelected: _navigateEditProfile(),
+            onSelected: (String choice) {
+              _onMenuItemSelected(choice);
+            },
             itemBuilder: (BuildContext context) {
-              return {'Profile', 'Settings', 'Logout'}.map((String choice) {
+              return _optionsMenu.map((String choice) {
                 return PopupMenuItem<String>(
                   value: choice,
                   child: Text(choice),
@@ -99,7 +105,10 @@ class HomeScreenState extends State<HomeScreen> {
   _navigateToCreatePost() async {
     final result = await Navigator.push(context,
         MaterialPageRoute(builder: (context) => CreateNewPostScreen()));
-    _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text("$result")));
+    if (result != null) {
+      _scaffoldKey.currentState
+          .showSnackBar(SnackBar(content: Text("$result")));
+    }
   }
 
   _navigateEditProfile() {
@@ -109,5 +118,19 @@ class HomeScreenState extends State<HomeScreen> {
 //    final result = await Navigator.push(
 //        context, MaterialPageRoute(builder: (context) => EditProfileScreen()));
 //    _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text("$result")));
+  }
+
+  _onMenuItemSelected(String choice) {
+    switch (choice) {
+      case PROFILE:
+        _navigateEditProfile();
+        break;
+      case SETTINGS:
+        // TODO
+        break;
+      case LOGOUT:
+        Navigator.pop(context);
+        break;
+    }
   }
 }
