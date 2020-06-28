@@ -84,6 +84,7 @@ List<Need> needs = [
       user: "Naresh",
       date: "23/06/2020",
       viewCount: 34,
+      accepted: false,
       description: "My car is broke. I work in the central town. If you also go"
           "to the central town, could you"
           "offer me a ride for next three days?"),
