@@ -84,6 +84,7 @@ class HomeScreenState extends State<HomeScreen> {
       //child: Icon(Icons.add),
       curve: Curves.easeIn,
       overlayOpacity: 0.5,
+      overlayColor: Colors.black45,
       onOpen: () => print('OPENING DIAL'),
       onClose: () => print('DIAL CLOSED'),
       tooltip: 'Post a need or offer',
