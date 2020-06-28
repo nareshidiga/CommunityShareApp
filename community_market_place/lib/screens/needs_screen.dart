@@ -126,7 +126,7 @@ class _NeedsState extends State<Needs> {
       itemCount: 5,
       carouselController: buttonCarouselController,
       options: CarouselOptions(
-        autoPlay: false,
+        autoPlay: true,
         //autoPlayAnimationDuration: Duration(microseconds: 10),
         enlargeCenterPage: true,
         viewportFraction: 0.9,
@@ -178,7 +178,7 @@ class _NeedsState extends State<Needs> {
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: _current == index
-                            ? Color.fromRGBO(0, 0, 0, 0.9)
+                            ? Theme.of(context).primaryColor
                             : Color.fromRGBO(0, 0, 0, 0.4),
                       ),
                     );
