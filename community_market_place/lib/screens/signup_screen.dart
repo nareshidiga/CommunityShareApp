@@ -59,7 +59,7 @@ class _SignUpScreen3State extends State<SignUpScreen3> {
               clipper: CustomLoginShapeClipper4(),
               child: Container(
                 height: heightOfScreen,
-                decoration: BoxDecoration(color: AppColors.orangeShade2),
+                decoration: BoxDecoration(color: Colors.deepPurple.shade100),
               ),
             ),
           ),
@@ -86,7 +86,7 @@ class _SignUpScreen3State extends State<SignUpScreen3> {
               child: Container(
                 height: heightOfScreen,
                 decoration: BoxDecoration(
-                  color: AppColors.lighterBlue,
+                  color: Colors.deepPurple.shade100,
                 ),
               ),
             ),
@@ -100,7 +100,7 @@ class _SignUpScreen3State extends State<SignUpScreen3> {
               child: Container(
                 height: heightOfScreen,
                 decoration: BoxDecoration(
-                  gradient: Gradients.curvesGradient2,
+                  gradient: Gradients.curvesGradient1,
                 ),
               ),
             ),
@@ -129,7 +129,7 @@ class _SignUpScreen3State extends State<SignUpScreen3> {
                   child: Text(
                     StringConst.LOGIN,
                     style: textTheme.button.copyWith(
-                      color: AppColors.orangeShade1,
+                      color: Theme.of(context).accentColor,
                     ),
                   ),
                 ),
@@ -266,7 +266,8 @@ class _SignUpScreen3State extends State<SignUpScreen3> {
                   width: Sizes.WIDTH_60,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(Sizes.RADIUS_30),
-                    gradient: Gradients.buttonGradient,
+                    color: Theme.of(context).accentColor,
+                    //gradient: Gradients.buttonGradient,
                   ),
                   child: Icon(
                     FeatherIcons.check,

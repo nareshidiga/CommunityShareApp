@@ -10,7 +10,7 @@ class Gradients {
     ],
   );
 
-  static const LinearGradient curvesGradient1 = LinearGradient(
+  static const LinearGradient curvesGradient2 = LinearGradient(
     colors: [
       AppColors.orange,
       AppColors.orangeShade1,
@@ -18,11 +18,11 @@ class Gradients {
     ],
   );
 
-  static const LinearGradient curvesGradient2 = LinearGradient(
+  static const LinearGradient curvesGradient1 = LinearGradient(
     colors: [
-      AppColors.seaBlue3,
-      AppColors.seaBlue2,
-      AppColors.seaBlue1,
+      AppColors.deepPurpleShade3,
+      AppColors.deepPurpleShade2,
+      AppColors.deepPurpleShade1,
     ],
   );
 
