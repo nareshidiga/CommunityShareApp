@@ -69,7 +69,7 @@ class OfferDetailsScreenState extends State<OfferDetailsScreen> {
                         children: [
                           ClipOval(
                             child: Material(
-                              color: AppColors.seaBlue1,
+                              color: Theme.of(context).accentColor,
                               child: InkWell(
                                 splashColor: AppColors.orangeShade5,
                                 child: SizedBox(width: Sizes.WIDTH_50, height: Sizes.HEIGHT_50, child: Icon(Icons.message, color: AppColors.white,)),
@@ -85,7 +85,7 @@ class OfferDetailsScreenState extends State<OfferDetailsScreen> {
                         children: [
                           ClipOval(
                             child: Material(
-                              color: AppColors.seaBlue1,
+                              color: Theme.of(context).accentColor,
                               child: InkWell(
                                 splashColor: AppColors.orangeShade5,
                                 child: SizedBox(width: Sizes.WIDTH_50, height: Sizes.HEIGHT_50, child: Icon(Icons.call, color: AppColors.white)),
@@ -101,7 +101,7 @@ class OfferDetailsScreenState extends State<OfferDetailsScreen> {
                         children: [
                           ClipOval(
                             child: Material(
-                              color: offers[index].accepted ? AppColors.green : AppColors.seaBlue1,
+                              color: offers[index].accepted ? AppColors.green : Theme.of(context).accentColor,
                               child: InkWell(
                                 splashColor: AppColors.orangeShade5,
                                 child: SizedBox(width: Sizes.WIDTH_50, height: Sizes.HEIGHT_50, child: Icon(Icons.local_offer, color: offers[index].accepted? AppColors.greyShade3  : AppColors.white, semanticLabel:'Accept offer' /*Accessibility feature needs to highlight this*/)),
