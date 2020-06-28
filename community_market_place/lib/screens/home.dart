@@ -1,3 +1,4 @@
+import 'package:communitymarketplace/bloc/theme_bloc.dart';
 import 'package:communitymarketplace/screens/edit_profile.dart';
 import 'package:communitymarketplace/screens/login_screen.dart';
 import 'package:communitymarketplace/screens/my_posts_screen.dart';
@@ -142,7 +143,9 @@ class HomeScreenState extends State<HomeScreen> {
         break;
       case LOGOUT:
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => LoginScreen()));
+            context,
+            MaterialPageRoute(
+                builder: (context) => LoginScreen(themeBloc: ThemeBloc())));
         break;
     }
   }

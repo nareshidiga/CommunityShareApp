@@ -67,18 +67,27 @@ class PostNewOfferFormState extends State<PostNewOfferForm> {
               padding: const EdgeInsets.only(top: 30),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SizedBox(
-                    height: 100,
-                    width: 200,
-                    child: Placeholder(
-                      color: Colors.blue[100],
+                    width: 120,
+                    height: 120,
+                    child: Card(
+                      elevation: 10,
+                      shadowColor: Theme.of(context).primaryColor,
+                      color: Theme.of(context).accentColor,
+                      child: Center(
+                          child: Text(
+                        'OFFER',
+                        style: TextStyle(color: Colors.grey[100]),
+                      )),
                     ),
                   ),
-                  OutlineButton(
-                    onPressed: () {},
-                    child: const Text('Upload image'),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 30.0),
+                    child: OutlineButton(
+                      onPressed: () {},
+                      child: const Text('Upload image'),
+                    ),
                   ),
                 ],
               ),

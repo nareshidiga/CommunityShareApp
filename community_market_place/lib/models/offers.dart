@@ -22,7 +22,7 @@ class Offer {
 List<Offer> offers = [
   Offer(
       imageUrl: "images/groceries.jpg",
-      userIcon: "images/pic1.jpg",
+      userIcon: "images/pic2.jpg",
       title: "I have all my groceries to give away as I am leaving to USA on a "
           "project work on this Friday.",
       user: "Raj",
@@ -37,7 +37,7 @@ List<Offer> offers = [
       imageUrl: "images/volleyball.jpg",
       userIcon: "images/pic3.jpg",
       title: "Join us on on coming Sunday to play volleyball ",
-      user: "Raj",
+      user: "Adi",
       date: "23/06/2020",
       viewCount: 75,
       accepted: false,
@@ -70,7 +70,7 @@ List<Offer> offers = [
       userIcon: "images/pic3.jpg",
       title: "I have a spare room available for rent. If someone you know "
           "likes to move in here, please contact me.",
-      user: "Naresh",
+      user: "Adi",
       date: "23/06/2020",
       viewCount: 67,
       accepted: false,
@@ -79,7 +79,7 @@ List<Offer> offers = [
           "likes to move in here, please contact me."),
   Offer(
       imageUrl: "images/trainer.jpg",
-      userIcon: "images/pic2.jpg",
+      userIcon: "images/pic1.jpg",
       title: "We have arranged a dance trainer for our kids. "
           "If you like to join your kid too, please contact us.",
       user: "Naresh",

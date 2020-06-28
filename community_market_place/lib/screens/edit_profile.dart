@@ -32,10 +32,10 @@ class EditProfileFormState extends State<EditProfileForm> {
       key: _formKey,
       child: Padding(
         padding: const EdgeInsets.only(left: 20.0, right: 20, top: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
           children: <Widget>[
             TextFormField(
+              initialValue: 'Naresh',
               decoration: const InputDecoration(
                 icon: const Icon(Icons.person),
                 hintText: 'Enter your full name',
@@ -49,6 +49,7 @@ class EditProfileFormState extends State<EditProfileForm> {
               },
             ),
             TextFormField(
+              initialValue: '7808487123',
               decoration: const InputDecoration(
                 icon: const Icon(Icons.phone),
                 hintText: 'Enter a phone number',
@@ -62,6 +63,7 @@ class EditProfileFormState extends State<EditProfileForm> {
               },
             ),
             TextFormField(
+              initialValue: 'naresh.1283@gmail.com',
               decoration: const InputDecoration(
                 icon: const Icon(Icons.email),
                 hintText: 'Enter your email id',
@@ -74,18 +76,42 @@ class EditProfileFormState extends State<EditProfileForm> {
                 return null;
               },
             ),
-            new Container(
-                padding: const EdgeInsets.only(left: 150.0, top: 40.0),
-                child: new RaisedButton(
-                  textColor: Colors.grey[100],
-                  child: const Text('Submit'),
-                  onPressed: () {
-                    if (_formKey.currentState.validate()) {
-                      Navigator.pop(context);
-                      //Navigator.pop(context, 'Saved successfully');
-                    }
-                  },
-                )),
+            Padding(
+              padding: const EdgeInsets.only(top: 30),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  CircleAvatar(
+                    backgroundImage: AssetImage("images/pic1.jpg"),
+                    radius: 60,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 30.0),
+                    child: OutlineButton(
+                      onPressed: () {},
+                      child: const Text('Upload image'),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Center(
+              child: SizedBox(
+                width: 200,
+                child: Padding(
+                  padding: const EdgeInsets.all(18.0),
+                  child: RaisedButton(
+                    textColor: Colors.grey[100],
+                    child: const Text('Submit'),
+                    onPressed: () {
+                      if (_formKey.currentState.validate()) {
+                        Navigator.pop(context);
+                      }
+                    },
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),

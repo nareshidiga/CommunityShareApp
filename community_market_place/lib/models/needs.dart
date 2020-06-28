@@ -45,9 +45,9 @@ List<Need> needs = [
           "immediately. My grand mother is experiencing chest pain."),
   Need(
       imageUrl: "images/blood.jpg",
-      userIcon: "images/pic1.jpg",
+      userIcon: "images/pic2.jpg",
       title: "Urgently looking for A- blood",
-      user: "Naresh",
+      user: "Adi",
       date: "23/06/2020",
       viewCount: 50,
       accepted: false,
@@ -55,9 +55,9 @@ List<Need> needs = [
           "My friend has met with an accident. Urgently looking for A- blood."),
   Need(
       imageUrl: "images/sanitizer.jpg",
-      userIcon: "images/pic3.jpg",
+      userIcon: "images/pic1.jpg",
       title: "Need a Sanitizer bottle and face mask",
-      user: "Adi",
+      user: "Naresh",
       date: "23/06/2020",
       viewCount: 46,
       accepted: false,

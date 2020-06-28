@@ -1,8 +1,4 @@
-
 import 'package:communitymarketplace/models/myposts.dart';
-import 'package:communitymarketplace/models/offers.dart';
-import 'package:communitymarketplace/screens/needs_details_screen.dart';
-import 'package:communitymarketplace/screens/offers_details_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'my_posts_details_screen.dart';
@@ -18,17 +14,16 @@ class _MyPostsState extends State<MyPosts> {
         shrinkWrap: true,
         itemCount: posts.length,
         gridDelegate: new SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 300, childAspectRatio: 3.5/ 2),
-
+            maxCrossAxisExtent: 300, childAspectRatio: 3.5 / 2),
         itemBuilder: (BuildContext context, int index) {
           Post post = posts[index];
           return PostListItem(
               tap: () {
                 Navigator.push(
-                    context, MaterialPageRoute(
-                    builder: (context) => MyPostsDetailsScreen(index: index)
-                )
-                );
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            MyPostsDetailsScreen(index: index)));
               },
               thumbnail: Container(
                   margin: EdgeInsets.only(left: 5, right: 5),
@@ -39,10 +34,8 @@ class _MyPostsState extends State<MyPosts> {
               user: post.user,
               date: post.date,
               viewCount: post.viewCount,
-              isNeed: post.isNeed
-          );
-        }
-    );
+              isNeed: post.isNeed);
+        });
   }
 }
 
@@ -132,10 +125,6 @@ class _PostDescription extends StatelessWidget {
             ),
           ),
           const Padding(padding: EdgeInsets.symmetric(vertical: 2.0)),
-          Text(
-            user,
-            style: const TextStyle(fontSize: 10.0),
-          ),
           const Padding(padding: EdgeInsets.symmetric(vertical: 1.0)),
           Text(
             date + '     ' + '$viewCount views',
@@ -144,7 +133,10 @@ class _PostDescription extends StatelessWidget {
           SizedBox(height: 3),
           Text(
             isNeed ? 'NEED' : 'OFFER',
-            style: const TextStyle(fontSize: 10.0, color: Colors.green, fontWeight: FontWeight.bold),
+            style: const TextStyle(
+                fontSize: 10.0,
+                color: Colors.green,
+                fontWeight: FontWeight.bold),
           ),
 /*          const Padding(padding: EdgeInsets.symmetric(vertical: 1.0)),
           Text(

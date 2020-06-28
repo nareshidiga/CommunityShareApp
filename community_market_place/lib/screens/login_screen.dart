@@ -221,7 +221,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
                   children: <Widget>[
                     CustomTextFormField(
-                      initialValue: 'Sam1283',
+                      initialValue: 'Naresh1283',
                       hasPrefixIcon: true,
                       prefixIcon: Icon(
                         FeatherIcons.user,
