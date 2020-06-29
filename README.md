@@ -21,15 +21,6 @@ A Flutter application for people within a community to share their needs or offe
 
 ----
 
-
-
-## Authors
-
-- [Naresh Idiga](https://www.linkedin.com/in/nidiga/)
-- [Narayana Madineni](https://www.linkedin.com/in/narayana-m-696b6230/)
-- [Rajeshwar Godugu](https://www.linkedin.com/in/rajeshwar-godugu-b4a8b8a/)
-
-
 <!-- omit in toc -->
 ## Table of Contents
 - [Authors](#authors)
@@ -51,6 +42,13 @@ A Flutter application for people within a community to share their needs or offe
 - [License](#license)
 
 ----
+
+## Authors
+
+- [Naresh Idiga](https://www.linkedin.com/in/nidiga/)
+- [Narayana Madineni](https://www.linkedin.com/in/narayana-m-696b6230/)
+- [Rajeshwar Godugu](https://www.linkedin.com/in/rajeshwar-godugu-b4a8b8a/)
+
 
 ## Overview
 
