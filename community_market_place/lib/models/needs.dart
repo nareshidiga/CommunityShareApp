@@ -111,6 +111,49 @@ List<Need> needs = [
       description: "Running out of veggies, could please let me know if you got"
           "extra capacity. Thank you"),
   Need(
+      imageUrl: "images/tutor.jpg",
+      userIcon: "images/pic2.jpg",
+      title: "Looking for a maths tutor for my son who is in 5th grade",
+      user: "Raj",
+      date: "23/06/2020",
+      viewCount: 36,
+      accepted: false,
+      description: "Hi there, I am looking for a maths tutor for my son who is "
+          "in 5th grade"),
+  Need(
+      imageUrl: "images/nanny.jpg",
+      userIcon: "images/pic3.jpg",
+      title: "I am looking for a nanny for my toddler",
+      user: "Adi",
+      date: "23/06/2020",
+      viewCount: 20,
+      accepted: false,
+      description:
+          "I am looking for a nanny for my toddler. Please recommend."),
+  Need(
+      imageUrl: "images/pasta.jpg",
+      userIcon: "images/pic3.jpg",
+      title: "I am running out of pasta."
+          "Do you have some spare pasta to share, please let me know. ",
+      user: "Adi",
+      date: "23/06/2020",
+      viewCount: 78,
+      accepted: false,
+      description:
+          "I am running out of pasta. Not able to buy from shops due to out of stock. "
+          "Do you have some spare pasta to share, please let me know. "),
+  Need(
+      imageUrl: "images/milk.jpg",
+      userIcon: "images/pic2.jpg",
+      title: "Running out of milk, urgently need for my kids ",
+      user: "Raj",
+      date: "23/06/2020",
+      viewCount: 43,
+      accepted: false,
+      description:
+          "Running out of milk, urgently need for my kids. Could you please "
+          "share if you have spare milk. Thank you. "),
+  Need(
       imageUrl: "images/room.jpg",
       userIcon: "images/pic1.jpg",
       title:
