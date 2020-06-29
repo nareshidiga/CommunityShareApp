@@ -1,10 +1,20 @@
 
 
 <h1 align="center" style="font-size:42px">
-  Community Share
+  Community Share App 
 </h1>
 
-A Flutter application for people within a community to share their needs or offers.
+A Flutter application for people to share their needs and offers within their community. Especially during a crisis, we realised how important it is for people to help each other. To help with that, the app highlights the urgent needs posted by its community members so that other members can help in a timely manner.  
+
+### Community Share App - iOS Preview
+<p>
+<img src="demos/ios/preview.gif" width="240">
+</p>
+
+### Community Share App - Android Preview
+<p>
+<img src="demos/android/preview.gif" width="240">
+</p>
 
 ## Getting Started
 
@@ -68,51 +78,34 @@ It allows beneficiary people (people in need of essentials etc.) to post their n
 
 It also allows volunteer community members to donate/offer support by posting about what they would like to offer. Benefeciary people can accept the offer and receive support
 
-<p>
-<img src="doc/demos/ScrollThroughPages_gif.gif" width="240">
-&nbsp;&nbsp;
-<img src="doc/demos/v2_solution_and_comments_gif.gif" width="240">
-&nbsp;&nbsp;
-<img src="doc/demos/v3_solution_impact_gif.gif" width="240">
-</p>
-
 ----
-
-## How it works
-
-A problem poster (who may be a normal individual, a small business owner or a large business) that is facing challenges due to COVID-19 (or any other global or community issue) posts the problem title, description and images/video of the problem using the mobile application or web application. He/she typically fills out a brief form that describes the problem. This information is then stored in a cloudant database in the IBM Cloud.
-
-A problem solver/innovator, who believes in community cooperation and solving problems together, opens the mobile application and can browse/search the problems posted based on the individual's preferences. He/she picks a problem, draws sketches or takes a video and uploads the title, description and images/videos about the solution. Multiple innovators can submit solutions using the user interface as well as comment on other solutions. They can share solutions through social networks to encourage collaboration and attract feedback. The application also displays identified themes, top strong comments and word cloud for the review comments. 
-
-The problem poster(small local business owner/any individual) can choose the best solution, implement the solution and post the outcomes. The business owner rewards the innovator who posted the best solution. Using Watson AI, other similar business owners will be notified about the problem, best solution and impact based on the similarities in the profile so that they can implement the same solution for their business.
-
-----
-
 
 ## Implemented App interaction preview
 
-1. Users can browse posted needs and offers.
+1. A User can post a new need or a new offer.
 
 <p>
 &nbsp;&nbsp;&nbsp;&nbsp;
-<img src="doc/demos/Showing_all_posted_problems_gif.gif" width="240">
+<img src="demos/android/login.png" width="240">
 &nbsp;&nbsp;
-<img src="doc/demos/Showing_all_posted_solutions_gif.gif" width="240">
+<img src="demos/android/actions.png" width="240">
+&nbsp;&nbsp;
+<img src="demos/android/need_form.png" width="240">
 </p>
 
-2. The individual who posted the needs and offers can view their posts under the 'My Posts' tab.
-   
-&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="doc/demos/v3_solution_impact_gif.gif" width="240">
-   
-3. Users can contact the user who posted the need or offer as well as provide support or accept offer.
-   
+2. A User can browse all needs and offers posted by all community members.
+
 <p>
 &nbsp;&nbsp;&nbsp;&nbsp;
-<img src="doc/demos/v2_solution_and_comments_gif.gif" width="240">
+<img src="demos/android/needs.png" width="240">
 &nbsp;&nbsp;
-<img src="doc/demos/ContributePage_gif.gif" width="240">
+<img src="demos/android/details.png" width="240">
 </p>
+
+3. The individual who posted the needs and offers can view their posts under the 'My Posts' tab.
+   
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="demos/android/myposts.png" width="240">  
 
 
 ----
@@ -122,7 +115,7 @@ The problem poster(small local business owner/any individual) can choose the bes
 
 ### Flutter
 
-- [Building beautiful UIs with Flutter](https://codelabs.developers.google.com/codelabs/flutter/#0)
+- [Building beautiful UIs with Flutter](https://flutter.dev/)
 
 ## Getting started
 
