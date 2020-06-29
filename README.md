@@ -4,8 +4,6 @@
   Community Share
 </h1>
 
-# Community Share App
-
 A Flutter application for people within a community to share their needs or offers.
 
 ## Getting Started
