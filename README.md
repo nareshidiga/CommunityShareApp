@@ -1,7 +1,7 @@
 
 
 <h1 align="center" style="font-size:42px">
-  Community Share App 
+  Community Share App (Work In Progress)
 </h1>
 
 A Flutter application for people to share their needs and offers within their community. Especially during a crisis, we realised how important it is for people to help each other. To help with that, the app highlights the urgent needs posted by its community members so that other members can help in a timely manner.  
